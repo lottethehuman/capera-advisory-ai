@@ -27,12 +27,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.top-rule {
-  width: 100%;
-  height: 1px;
-  background: #E8E2D8;
-}
-
 nav {
   padding: 32px 56px;
   display: flex;
@@ -67,9 +61,7 @@ main {
   position: relative;
 }
 
-.hero {
-  max-width: 680px;
-}
+.hero { max-width: 680px; }
 
 .hero-label {
   font-family: 'Space Grotesk', sans-serif;
@@ -117,13 +109,14 @@ main {
   color: #1C1A16;
   opacity: 0.75;
   max-width: 440px;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
 }
 
 .hero-contact {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin-top: 12px;
 }
 .contact-label {
   font-family: 'Space Grotesk', sans-serif;
@@ -148,6 +141,38 @@ main {
 .contact-email:hover {
   color: #8C7B5E;
   border-color: #8C7B5E;
+}
+
+.os-list {
+  position: absolute;
+  top: 80px;
+  right: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.os-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: #8A8278;
+}
+
+.os-list-mobile {
+  display: none;
+  padding: 24px 28px;
+  border-top: 1px solid #D4CFC6;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.os-list-mobile .os-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #8A8278;
 }
 
 .corner-mark {
@@ -197,6 +222,8 @@ footer {
   .nav-location { display: none; }
   main { padding: 56px 28px; }
   .corner-mark { display: none; }
+  .os-list { display: none; }
+  .os-list-mobile { display: flex; }
   footer { padding: 20px 28px; flex-direction: column; gap: 8px; text-align: center; }
   .hero-h1 { font-size: clamp(40px, 12vw, 64px); }
 }
@@ -207,7 +234,7 @@ footer {
 
 <nav>
   <div class="nav-wm">CAPERA ADVISORY</div>
-  <div class="nav-location">Hong Kong | Worldwide </div>
+  <div class="nav-location">Hong Kong</div>
 </nav>
 
 <main>
@@ -216,16 +243,14 @@ footer {
 
     <h1 class="hero-h1">
       Building the<br>
-      intelligence<br>
-      your company<br>
-      runs on.
+      intelligence layer<br>
+      you and your<br>
+      company run on.
     </h1>
 
     <div class="hero-rule"></div>
 
-    <p class="hero-body">
-      Capera Advisory is launching soon. If you are a founder who needs to think and operate at scale, get in touch.
-    </p>
+    <p class="hero-body">Capera Advisory is launching soon. If you're a founder who needs to think and operate at scale, get in touch.</p>
 
     <div class="hero-contact">
       <div class="contact-label">Enquiries</div>
@@ -233,11 +258,28 @@ footer {
     </div>
   </div>
 
+  <div class="os-list">
+    <div class="os-label">DTCBrandOS</div>
+    <div class="os-label">RacquetsClubOS</div>
+    <div class="os-label">ConsultantOS</div>
+    <div class="os-label">FamilyOS</div>
+  </div>
+
   <div class="corner-mark">
     <div class="corner-year">Est. 2026</div>
     <div class="corner-year">capera-advisory.ai</div>
   </div>
 </main>
+
+<div class="os-list-mobile">
+  <span class="os-label">DTCBrandOS</span>
+  <span class="os-label">·</span>
+  <span class="os-label">RacquetsClubOS</span>
+  <span class="os-label">·</span>
+  <span class="os-label">ConsultantOS</span>
+  <span class="os-label">·</span>
+  <span class="os-label">FamilyOS</span>
+</div>
 
 <footer>
   <div class="footer-wm">CAPERA ADVISORY</div>
