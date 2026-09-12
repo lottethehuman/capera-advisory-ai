@@ -4,28 +4,28 @@
 <meta charset="UTF-8">
 <meta name="color-scheme" content="light only">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Capera Advisory — AI Operating Systems for Founders. Coming soon.">
+<meta name="description" content="Capera Advisory — the ops advisory for consumer & hospitality businesses. AI operating systems, dashboards, and automation.">
 <title>Capera Advisory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=EB+Garamond:wght@400&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=EB+Garamond:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
-  height: 100%;
-  background: #E8E2D8;
+  background: #F5F1EA;
 }
 
 body {
   font-family: 'Space Grotesk', sans-serif;
   color: #1C1A16;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   -webkit-font-smoothing: antialiased;
 }
+
+a { color: inherit; }
+
+/* ---------- NAV ---------- */
 
 nav {
   padding: 32px 56px;
@@ -33,6 +33,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #D4CFC6;
+  position: sticky;
+  top: 0;
+  background: #F5F1EA;
+  z-index: 10;
 }
 .nav-wm {
   font-family: 'Space Grotesk', sans-serif;
@@ -43,6 +47,11 @@ nav {
   color: #1C1A16;
   white-space: nowrap;
 }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
 .nav-location {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 300;
@@ -51,31 +60,43 @@ nav {
   text-transform: uppercase;
   color: #8A8278;
 }
-
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px 56px;
-  position: relative;
+.nav-cta {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #1C1A16;
+  text-decoration: none;
+  border-bottom: 1px solid #8C7B5E;
+  padding-bottom: 3px;
+  transition: color 0.2s, border-color 0.2s;
 }
+.nav-cta:hover { color: #8C7B5E; }
 
-.hero { max-width: 680px; }
+/* ---------- SECTION SHELL ---------- */
 
-.hero-label {
+section {
+  padding: 100px 56px;
+  border-bottom: 1px solid #D4CFC6;
+}
+.section-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.eyebrow {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 400;
   font-size: 9px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #8A8278;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   display: flex;
   align-items: center;
   gap: 16px;
 }
-.hero-label::before {
+.eyebrow::before {
   content: '';
   display: block;
   width: 24px;
@@ -84,14 +105,19 @@ main {
   flex-shrink: 0;
 }
 
+/* ---------- HERO ---------- */
+
+.hero { padding-top: 64px; padding-bottom: 120px; }
+.hero .section-inner { max-width: 760px; margin: 0; }
+
 .hero-h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(44px, 7vw, 96px);
+  font-size: clamp(38px, 5.4vw, 68px);
   font-weight: 300;
-  line-height: 0.97;
-  letter-spacing: -0.02em;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
   color: #1C1A16;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .hero-rule {
@@ -99,7 +125,7 @@ main {
   max-width: 480px;
   height: 1px;
   background: #D4CFC6;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .hero-body {
@@ -107,16 +133,38 @@ main {
   font-size: 19px;
   line-height: 1.75;
   color: #1C1A16;
-  opacity: 0.75;
-  max-width: 440px;
-  margin-bottom: 36px;
+  opacity: 0.8;
+  max-width: 480px;
+  margin-bottom: 40px;
 }
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #F5F1EA;
+  background: #1C1A16;
+  border: 1px solid #1C1A16;
+  padding: 16px 32px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-primary:hover { background: #8C7B5E; border-color: #8C7B5E; }
 
 .hero-contact {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-top: 12px;
 }
 .contact-label {
   font-family: 'Space Grotesk', sans-serif;
@@ -129,69 +177,220 @@ main {
 .contact-email {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.06em;
   color: #1C1A16;
   text-decoration: none;
   border-bottom: 1px solid #D4CFC6;
   padding-bottom: 3px;
-  display: inline-block;
   transition: border-color 0.2s, color 0.2s;
 }
-.contact-email:hover {
-  color: #8C7B5E;
-  border-color: #8C7B5E;
+.contact-email:hover { color: #8C7B5E; border-color: #8C7B5E; }
+
+/* ---------- PILLARS (what we build) ---------- */
+
+.pillars-h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #1C1A16;
+  max-width: 560px;
+  margin-bottom: 64px;
 }
 
-.os-list {
-  position: absolute;
-  top: 80px;
-  right: 56px;
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #D4CFC6;
+  border: 1px solid #D4CFC6;
+}
+.pillar-card {
+  background: #E8E2D8;
+  padding: 40px 32px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
+  gap: 20px;
 }
-.os-label {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  color: #8A8278;
-}
-
-.os-list-mobile {
-  display: none;
-  padding: 24px 28px;
-  border-top: 1px solid #D4CFC6;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.os-list-mobile .os-label {
+.pillar-num {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 300;
   font-size: 11px;
-  letter-spacing: 0.1em;
-  color: #8A8278;
+  letter-spacing: 0.15em;
+  color: #8C7B5E;
+}
+.pillar-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 26px;
+  color: #1C1A16;
+}
+.pillar-body {
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #1C1A16;
+  opacity: 0.78;
 }
 
-.corner-mark {
-  position: absolute;
-  bottom: 80px;
-  right: 56px;
+/* ---------- EXPERIENCE ---------- */
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.exp-h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 300;
+  line-height: 1.2;
+  color: #1C1A16;
+  margin-bottom: 24px;
+}
+
+.exp-body {
+  font-family: 'EB Garamond', serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #1C1A16;
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.vertical-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.vertical-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1C1A16;
+  background: #E8E2D8;
+  border: 1px solid #D4CFC6;
+  padding: 8px 14px;
+}
+
+.track-record {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+}
+.track-item {
+  padding: 22px 0;
+  border-top: 1px solid #D4CFC6;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
-.corner-year {
+.track-item:last-child { border-bottom: 1px solid #D4CFC6; }
+.track-tag {
   font-family: 'Space Grotesk', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 9px;
   letter-spacing: 0.2em;
-  color: #8A8278;
   text-transform: uppercase;
+  color: #8C7B5E;
 }
+.track-text {
+  font-family: 'EB Garamond', serif;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: #1C1A16;
+  opacity: 0.85;
+}
+
+/* ---------- WAITLIST ---------- */
+
+.waitlist { border-bottom: none; }
+.waitlist .section-inner {
+  max-width: 560px;
+  text-align: center;
+  margin: 0 auto;
+}
+.waitlist .eyebrow { justify-content: center; }
+.waitlist .eyebrow::before { display: none; }
+.waitlist-h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4.4vw, 48px);
+  font-weight: 300;
+  color: #1C1A16;
+  margin-bottom: 20px;
+}
+.waitlist-body {
+  font-family: 'EB Garamond', serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #1C1A16;
+  opacity: 0.78;
+  margin-bottom: 44px;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+.field-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #8A8278;
+  margin-bottom: 8px;
+  display: block;
+}
+.field-input {
+  width: 100%;
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  color: #1C1A16;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #D4CFC6;
+  padding: 10px 2px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.field-input:focus { border-color: #8C7B5E; }
+.field-input::placeholder { color: #A39C8F; }
+
+.waitlist-submit {
+  margin-top: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #F5F1EA;
+  background: #1C1A16;
+  border: 1px solid #1C1A16;
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.waitlist-submit:hover { background: #8C7B5E; border-color: #8C7B5E; }
+
+.waitlist-note {
+  margin-top: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #8A8278;
+  text-align: center;
+}
+
+/* ---------- FOOTER ---------- */
 
 footer {
   padding: 24px 56px;
@@ -217,15 +416,19 @@ footer {
   color: #8A8278;
 }
 
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 860px) {
+  .pillar-grid { grid-template-columns: 1fr; }
+  .exp-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
 @media (max-width: 640px) {
   nav { padding: 24px 28px; }
   .nav-location { display: none; }
-  main { padding: 56px 28px; }
-  .corner-mark { display: none; }
-  .os-list { display: none; }
-  .os-list-mobile { display: flex; }
+  section { padding: 64px 28px; }
+  .hero { padding-top: 40px; padding-bottom: 72px; }
   footer { padding: 20px 28px; flex-direction: column; gap: 8px; text-align: center; }
-  .hero-h1 { font-size: clamp(40px, 12vw, 64px); }
 }
 
 </style>
@@ -234,52 +437,113 @@ footer {
 
 <nav>
   <div class="nav-wm">CAPERA ADVISORY</div>
-  <div class="nav-location">Hong Kong | Worldwide </div>
+  <div class="nav-links">
+    <div class="nav-location">Hong Kong | Worldwide</div>
+    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+  </div>
 </nav>
 
-<main>
-  <div class="hero">
-    <div class="hero-label">Coming Soon</div>
+<section class="hero">
+  <div class="section-inner">
+    <div class="eyebrow">Ops Advisory | Fractional COO</div>
 
-    <h1 class="hero-h1">
-      AI systems <br>
-      built for the way <br>
-      you and your business <br>
-      actually runs.
-    </h1>
+    <h1 class="hero-h1">From founder chaos to an operating system that helps you make better decisions.</h1>
 
     <div class="hero-rule"></div>
 
-    <p class="hero-body">Capera Advisory designs and deploys AI operating systems for founder-led businesses. Launching soon. </p>
+    <p class="hero-body">Capera Advisory works with founder-led businesses to build its intelligence layer — so decisions stop depending on whoever remembers to check.</p>
 
-    <div class="hero-contact">
-      <div class="contact-label">Enquiries</div>
-      <a href="mailto:charlotte@capera-advisory.com" class="contact-email">charlotte@capera-advisory.com</a>
+    <div class="hero-actions">
+      <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+      <div class="hero-contact">
+        <div class="contact-label">Enquiries</div>
+        <a href="mailto:charlotte@capera-advisory.com" class="contact-email">charlotte@capera-advisory.com</a>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="os-list">
-    <div class="os-label">DTCBrandOS</div>
-    <div class="os-label">RacquetsClubOS</div>
-    <div class="os-label">ManufacturingOS</div>
-    <div class="os-label">ConsultancyOS</div>
+<section>
+  <div class="section-inner">
+    <div class="eyebrow">What We Build</div>
+    <h2 class="pillars-h2">Three systems that turn a founder's judgment into something the whole business can run on.</h2>
+
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">AI Operating System</div>
+        <p class="pillar-body">A single system for how your business actually runs — decisions, workflows, and knowledge, organized around you instead of scattered across chats, spreadsheets, and memory.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Metrics Dashboard</div>
+        <p class="pillar-body">Live visibility into the numbers that actually run the business — sales, ops, cash — without waiting on a monthly report to tell you what already happened.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Automation</div>
+        <p class="pillar-body">The repetitive work — reporting, reconciliation, chasing follow-ups — running quietly in the background, so your time goes to the decisions only you can make.</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="corner-mark">
-    <div class="corner-year">Est. 2026</div>
-    <div class="corner-year">capera-advisory.ai</div>
+<section>
+  <div class="section-inner">
+    <div class="eyebrow">Experience</div>
+
+    <div class="exp-grid">
+      <div>
+        <h3 class="exp-h2">Built by someone who has run operations, not just advised on them.</h3>
+        <p class="exp-body">Before Capera Advisory, Charlotte Chen Pienaar built a career across finance and tech, then founded and scaled her own consumer brand. She's sat in her clients' seat — as a founder-operator hitting the same bottlenecks — not just advising from the outside.</p>
+      </div>
+
+      <div class="track-record">
+        <div class="track-item">
+          <div class="track-tag">Beauty (Founder-Operator)</div>
+          <div class="track-text">Founded and scaled a US beauty brand from $0 to seven figures across wholesale and DTC, building an operating system to orchestrate a 100% remote team across 7 departments — product development, supply chain, design, sales, brand marketing, performance marketing, and finance — running a lean team, with output like a headcount twice its size.</div>
+        </div>
+        <div class="track-item">
+          <div class="track-tag">Physical Site (Crisis Rebuild)</div>
+          <div class="track-text">Rescued a site from crisis to fully operating in 12 weeks — resetting direction with OKRs, running the full rebuild (contractors, design, procurement, legal, HR) through one project system, then defining SOPs and workflows to automate day-to-day operations and standing up board-level BI, now run daily by a full in-house team.</div>
+        </div>
+        <div class="track-item">
+          <div class="track-tag">Founder-Led Business</div>
+          <div class="track-text">Built a custom operating layer for a founder-led business spanning B2B and B2C across 6 departments — fixing an information silo, giving the founder clarity to make decisions across both business units, and designing workflows and a knowledge base built to scale with AI, without adding new hires.</div>
+        </div>
+        <div class="track-item">
+          <div class="track-tag">Multi-Location Business</div>
+          <div class="track-text">Ran stakeholder interviews to design a command center and daily intelligence for GMs and management — live BI dashboards by department pulling sales, inventory, POS, opex, and labor data across multiple locations into one view.</div>
+        </div>
+      </div>
+    </div>
   </div>
-</main>
+</section>
 
-<div class="os-list-mobile">
-  <span class="os-label">DTCBrandOS</span>
-  <span class="os-label">·</span>
-  <span class="os-label">RacquetsClubOS</span>
-  <span class="os-label">·</span>
-  <span class="os-label">ConsultantOS</span>
-  <span class="os-label">·</span>
-  <span class="os-label">FamilyOS</span>
-</div>
+<section class="waitlist" id="waitlist">
+  <div class="section-inner">
+    <div class="eyebrow">Limited Availability</div>
+    <h2 class="waitlist-h2">Join the Waitlist</h2>
+    <p class="waitlist-body">Capera Advisory takes on a limited number of engagements at a time. Leave your details and we'll be in touch when a spot opens up.</p>
+
+    <form class="waitlist-form" onsubmit="return false;">
+      <div>
+        <label class="field-label" for="wl-name">Name</label>
+        <input class="field-input" id="wl-name" type="text" placeholder="Your name">
+      </div>
+      <div>
+        <label class="field-label" for="wl-email">Email</label>
+        <input class="field-input" id="wl-email" type="email" placeholder="you@company.com">
+      </div>
+      <div>
+        <label class="field-label" for="wl-business">Business</label>
+        <input class="field-input" id="wl-business" type="text" placeholder="Business name & what you do">
+      </div>
+      <button class="waitlist-submit" type="submit">Join Waitlist</button>
+    </form>
+    <div class="waitlist-note">This form is a placeholder — it isn't wired up to send submissions anywhere yet.</div>
+  </div>
+</section>
 
 <footer>
   <div class="footer-wm">CAPERA ADVISORY</div>
