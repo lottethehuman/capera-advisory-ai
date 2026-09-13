@@ -344,6 +344,51 @@ section {
   opacity: 0.85;
 }
 
+/* ---------- QUOTE ---------- */
+
+.quote-section {
+  padding: 96px 56px;
+  border-bottom: 1px solid #D4CFC6;
+}
+.quote-section .section-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.quote-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(28px, 3.8vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #1C1A16;
+  margin: 0 0 24px;
+}
+.quote-text {
+  font-family: 'EB Garamond', serif;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: #1C1A16;
+  opacity: 0.8;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  text-align: left;
+  border-left: 2px solid #8C7B5E;
+  padding-left: 22px;
+}
+.quote-attribution {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8A8278;
+}
+
+@media (max-width: 640px) {
+  .quote-section { padding: 64px 28px; }
+}
+
 /* ---------- WAITLIST ---------- */
 
 .waitlist { border-bottom: none; }
@@ -555,6 +600,14 @@ footer {
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="section-inner">
+    <p class="quote-headline">"Chaos to clarity at extraordinary speed."</p>
+    <blockquote class="quote-text">"Charlotte brings a rare combination of C-suite thinking and operator-level execution — with an ability to take in complexity and volume at speed, under pressure, without losing her drive for results."</blockquote>
+    <div class="quote-attribution">— Board Member, Anonymous</div>
   </div>
 </section>
 
