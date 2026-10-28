@@ -3,6 +3,8 @@
 <head>
 <script>document.documentElement.classList.add("js")</script>
 <meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K47XDYJKYX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K47XDYJKYX');</script>
 <meta name="color-scheme" content="light only">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
@@ -795,6 +797,7 @@ html[lang="zh-Hant"] .track-outcome { text-wrap: pretty; }
 
           var body = new URLSearchParams({ name: name, email: email, business: business, question: question });
 
+          if (window.gtag) gtag('event', 'generate_lead', { form: 'start_a_conversation', lang: document.documentElement.lang });
           fetch(ENDPOINT, {
             method: 'POST',
             mode: 'no-cors',
@@ -864,6 +867,21 @@ html[lang="zh-Hant"] .track-outcome { text-wrap: pretty; }
   var start = 'en';
   try { var q = new URLSearchParams(location.search).get('lang'); if (q === 'zh' || q === 'zh-Hant') start = 'zh-Hant'; else { var saved = localStorage.getItem('capera-lang'); if (saved) start = saved; } } catch (err) {}
   apply(start);
+})();
+</script>
+<script>
+(function(){
+  function ev(n,p){ if (window.gtag) gtag('event', n, p || {}); }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a, button'); if (!a) return;
+    if (a.matches('.nav-cta, .btn-primary')) ev('book_a_call_click', { location: a.classList.contains('nav-cta') ? 'nav' : 'hero' });
+    else if (a.matches('a[href^="mailto:"]')) ev('email_click', { location: a.closest('#waitlist') ? 'form' : 'hero' });
+    else if (a.matches('.lang-toggle button')) ev('language_switch', { language: a.getAttribute('data-lang') });
+  });
+  document.addEventListener('toggle', function(e){
+    var d = e.target; if (!d.matches || !d.matches('details.track-card') || !d.open) return;
+    var t = d.querySelector('.track-tag'); ev('case_study_open', { case_study: t ? (t.getAttribute('data-en') || t.textContent).replace(/<[^>]+>/g,'').trim() : '' });
+  }, true);
 })();
 </script>
 </body>
