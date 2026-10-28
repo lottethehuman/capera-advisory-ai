@@ -575,8 +575,17 @@ footer {
 }
 
 html[lang="zh-Hant"] .track-problem { font-style: normal; }
-html[lang="zh-Hant"] h1, html[lang="zh-Hant"] h2 { word-break: keep-all; overflow-wrap: anywhere; }
+html[lang="zh-Hant"] h1, html[lang="zh-Hant"] h2 { line-break: strict; text-wrap: pretty; }
+@media (min-width: 641px) { html[lang="zh-Hant"] h2 { word-break: keep-all; } }
 html[lang="zh-Hant"] .track-outcome { text-wrap: pretty; }
+@media (max-width: 640px) {
+  .nav-cta { display: none; }
+  .nav-links { gap: 0; }
+  .lang-toggle { font-size: 12px; gap: 2px; }
+  .lang-toggle button { padding: 12px 10px; min-width: 44px; min-height: 44px; }
+}
+.ph { display: inline-block; }
+@media (max-width: 640px) { html[lang="zh-Hant"] .hero-h1 { font-size: 36px; } }
 </style>
 </head>
 <body>
@@ -586,7 +595,7 @@ html[lang="zh-Hant"] .track-outcome { text-wrap: pretty; }
   <div class="nav-links">
     <div class="nav-location" data-i18n="nav_loc">Hong Kong | Southeast Asia</div>
     <div class="lang-toggle" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><span aria-hidden="true">|</span><button type="button" data-lang="zh-Hant">繁</button></div>
-    <a href="#waitlist" class="nav-cta" data-i18n="cta">Start a Conversation</a>
+    <a href="#waitlist" class="nav-cta" data-i18n="cta">Book a Call</a>
   </div>
 </nav>
 
@@ -601,7 +610,7 @@ html[lang="zh-Hant"] .track-outcome { text-wrap: pretty; }
     <p class="hero-body" data-i18n="hero_sub">Capera Advisory builds the intelligence layer that runs your business, so growing doesn't mean losing sight of what matters.</p>
 
     <div class="hero-actions">
-      <a href="#waitlist" class="btn-primary" data-i18n="cta">Start a Conversation</a>
+      <a href="#waitlist" class="btn-primary" data-i18n="cta">Book a Call</a>
       <div class="hero-contact">
         <div class="contact-label" data-i18n="enq">Enquiries</div>
         <a href="mailto:charlotte@capera-advisory.com" class="contact-email">charlotte@capera-advisory.com</a>
@@ -758,7 +767,7 @@ html[lang="zh-Hant"] .track-outcome { text-wrap: pretty; }
         <label class="field-label" for="wl-question" data-i18n="f_q">What would you most like to fix or see more clearly?</label>
         <input class="field-input" id="wl-question" data-i18n-ph="ph_q" name="question" type="text" placeholder="In a sentence or two">
       </div>
-      <button class="waitlist-submit" type="submit" id="waitlist-submit-btn" data-i18n="cta">Start a Conversation</button>
+      <button class="waitlist-submit" type="submit" id="waitlist-submit-btn" data-i18n="cta">Book a Call</button>
     </form>
     <div class="waitlist-note" id="waitlist-status" data-i18n="pref_email">Prefer email? <a href="mailto:charlotte@capera-advisory.com">charlotte@capera-advisory.com</a></div>
 
@@ -837,7 +846,7 @@ html[lang="zh-Hant"] .track-outcome { text-wrap: pretty; }
 </script>
 <script>
 (function(){
-  var ZH = {"nav_loc": "香港 | 東南亞", "cta": "預約洽談", "enq": "查詢", "hero_h1": "我們將零散的資訊，轉化為管理層信得過的決策。", "hero_sub": "Capera Advisory 為您的企業建立智能營運平台，讓業務在擴展的同時，管理層依然對全盤狀況瞭如指掌。", "wwd": "我們的服務", "wwd_h2": "專為創辦人主導企業而設的一體化系統，讓您的工具、團隊與流程協調運作。", "p1t": "業務診斷及策略規劃", "p1b": "透過與管理層及核心團隊深入訪談，全面檢視業務現況，找出最具價值的發展機會，並訂定優先推行的項目。", "p2t": "AI Operating System", "p2b": "由前線至後勤，為各團隊建立合適的系統，並確保彼此互相配合。", "p3t": "Dashboard 及報告", "p3b": "實時掌握最關鍵的財務及營運數據，了解現況、成因及下一步行動。", "p4t": "Workflow 及 AI", "p4b": "梳理團隊之間的工作流程，改善不足之處，並在最能發揮效益的環節應用 AI。", "hww": "我們的工作方式", "hww_h2": "好的系統，建基於對業務的透徹理解。", "hww_b": "在建立任何系統之前，我們會先與創辦人深入了解業務目標。我們的顧問服務以成果為本，以企業的實際轉變衡量成效；系統上線後，我們會繼續以營運夥伴的身份同行，隨業務發展持續維護及優化系統。", "la": "名額有限", "cta_h2": "與我們洽談", "cta_b": "合作由業務診斷及策略規劃階段開始，以 fixed fee 收費，讓您在項目開展前清楚掌握範圍及費用。您毋須預先了解 AI 的應用之處，這正是首次洽談的目的。我們同一時間只承接有限數量的項目。", "f_name": "姓名", "f_email": "電郵", "f_bus": "公司", "f_q": "您最希望改善或掌握哪方面的情況？", "pref_email": "如欲以電郵聯絡：<a href=\"mailto:charlotte@capera-advisory.com\">charlotte@capera-advisory.com</a>", "ph_name": "您的姓名", "ph_bus": "公司名稱及業務", "ph_q": "一兩句即可", "err": "請填寫姓名及電郵。", "sending": "傳送中…", "thanks": "謝謝您的查詢，我們會盡快與您聯絡。", "exp": "過往經驗", "exp_h2": "真正經營過企業的團隊，親手為您打造 AI。", "bio": "Charlotte Chen Pienaar 為 Capera Advisory 創辦人兼首席顧問。她畢業於紐約大學（New York University），主修經濟學，其後於 KPMG 及 Macquarie Capital 從事金融工作，並曾參與 500 Startups accelerator，累積逾 15 年金融、科技及企業營運經驗。她曾出任創辦人、Fractional CEO 及 Fractional COO，深明企業在發展過程中所面對的挑戰。", "range": "服務客戶涵蓋款待業、休閒康樂、製造業及消費品品牌。", "l_str": "策略", "l_os": "AI Operating System", "l_dash": "Dashboard", "l_wf": "Workflow 及 AI", "l_ho": "交接", "l_lead": "領導", "c1_tag": "多店款待業集團 · Fractional COO", "c1_prob": "營運數據散落各個系統，難以掌握全局。", "c1_out": "兩間分店共用一套 Command Center，由每日簡報到每月 P&amp;L，一目了然。", "c1_d1": "深入訪談管理層及核心團隊，完成 due diligence 報告，篩選出最具價值、最值得優先推行的項目。", "c1_d2": "建立橫跨兩間分店的 Command Center，按職位設定權限，並設有財務及合規專區；人力資源功能即將推出。", "c1_d3": "由各崗位的每日簡報到 P&amp;L 及營運分析，建立整套管理報告，讓管理層看清趨勢、提前部署。", "c1_d4": "將人手處理的日常工作 AI 化，並為會計及合規事務訂立 SOP。", "c1_d5": "管理團隊已能自行運作 Command Center，Capera 繼續提供技術支援。", "c2_tag": "場地業務重整 · Fractional CEO", "c2_prob": "場地瀕臨結業，只有數星期時間力挽狂瀾。", "c2_out": "12 星期內全面恢復營運，並交由內部團隊接手管理。", "c2_d1": "主導危機處理，制定全面營運重整策略，訂立 OKR，並於場地重建期間統籌各供應商。品牌方面，重新梳理品牌方向及定位，由構思一直跟進至正式推出。", "c2_d2": "從零開始建立場地的營運系統，將銷售、市場推廣以至法務及財務等部門的流程、知識及決策集中管理，讓新員工可透過系統迅速上手。", "c2_d3": "先以項目 Dashboard 掌握重建進度，其後建立董事會報告及商業智能分析，並將決議以至會議記錄等董事會事務納入同一系統管理。", "c2_d4": "為日常營運制定 SOP，並將流程 AI 化，讓場地毋須時刻有人監督，亦能順暢運作。", "c2_d5": "聘請總經理並加以指導，協助他組建內部團隊，獨立管理整個平台。", "c3_tag": "B2B 及 B2C 製造商 · Fractional COO", "c3_prob": "兩個業務單位各自發展，方向不一。", "c3_out": "雙線業務方向一致，由前線銷售到董事會，共用同一套營運系統。", "c3_d1": "與創辦人一同訂立 B2B 及 B2C 業務的發展方向，再轉化為管理層可跟進的 OKR 及指標。", "c3_d2": "為各部門度身建立合適的系統，包括銷售團隊專用的 CRM，以及全公司共用的知識庫。", "c3_d3": "每日為 CEO 提供兩項業務的營運概覽；董事會報告亦整合為一套流程，由整理數據到製作簡報一站式完成。", "c3_d4": "市場推廣物料設計、報價及發票流程均已 AI 化，下一步將延伸至產品設計，讓團隊毋須增聘人手，亦能應付業務增長。", "c3_d5": "培訓團隊掌握新工具及流程，直至能夠獨立運作。", "c4_tag": "消費品品牌 · 創辦人兼 CEO", "c4_prob": "在美國沒有本地團隊，從亞洲遙距建立美國品牌。", "c4_out": "由品牌創立到進駐美國全國零售渠道，全靠一支精簡的遙距團隊。", "c4_d1": "訂立品牌定位、產品路線圖及渠道策略，先後拓展 DTC 及批發業務，在沒有創投資金的情況下，成功取得美國全國性零售客戶。", "c4_d2": "品牌成立之初已建立整套營運系統，以一個 Command Center 連接前線及後勤，讓遙距團隊掌握同一套資訊。", "c4_d3": "建立 Dashboard，由產品開發、供應鏈到市場推廣及財務表現全面追蹤，讓團隊隨時掌握業務進展。", "c4_d4": "設計團隊與外部夥伴之間的協作流程，由廠商、供應商到零售客戶，讓業務增長之餘，團隊依然保持精簡。", "c4_d5": "帶領跨時區的遙距團隊，方向一致、分工清晰。", "q_h": "「化繁為簡，速度驚人。」", "q_b": "「Charlotte 結合 C-suite 的策略思維與前線營運經驗，在極短時間內理順複雜的業務，並帶來實際成果。」", "q_a": "董事會成員（匿名）"}, EN = {"err": "Please fill in your name and email.", "sending": "Sending…", "thanks": "Thank you. We'll be in touch shortly."};
+  var ZH = {"nav_loc": "香港 | 東南亞", "cta": "預約洽談", "enq": "查詢", "hero_h1": "<span class=\"ph\">我們將零散的資訊，</span><span class=\"ph\">轉化為管理層</span><span class=\"ph\">信得過的決策。</span>", "hero_sub": "Capera Advisory 為您的企業建立智能營運平台，讓業務在擴展的同時，管理層依然對全盤狀況瞭如指掌。", "wwd": "我們的服務", "wwd_h2": "專為創辦人主導企業而設的一體化系統，讓您的工具、團隊與流程協調運作。", "p1t": "業務診斷及策略規劃", "p1b": "透過與管理層及核心團隊深入訪談，全面檢視業務現況，找出最具價值的發展機會，並訂定優先推行的項目。", "p2t": "AI Operating System", "p2b": "由前線至後勤，為各團隊建立合適的系統，並確保彼此互相配合。", "p3t": "Dashboard 及報告", "p3b": "實時掌握最關鍵的財務及營運數據，了解現況、成因及下一步行動。", "p4t": "Workflow 及 AI", "p4b": "梳理團隊之間的工作流程，改善不足之處，並在最能發揮效益的環節應用 AI。", "hww": "我們的工作方式", "hww_h2": "好的系統，建基於對業務的透徹理解。", "hww_b": "在建立任何系統之前，我們會先與創辦人深入了解業務目標。我們的顧問服務以成果為本，以企業的實際轉變衡量成效；系統上線後，我們會繼續以營運夥伴的身份同行，隨業務發展持續維護及優化系統。", "la": "名額有限", "cta_h2": "與我們洽談", "cta_b": "合作由業務診斷及策略規劃階段開始，以 fixed fee 收費，讓您在項目開展前清楚掌握範圍及費用。您毋須預先了解 AI 的應用之處，這正是首次洽談的目的。我們同一時間只承接有限數量的項目。", "f_name": "姓名", "f_email": "電郵", "f_bus": "公司", "f_q": "您最希望改善或掌握哪方面的情況？", "pref_email": "如欲以電郵聯絡：<a href=\"mailto:charlotte@capera-advisory.com\">charlotte@capera-advisory.com</a>", "ph_name": "您的姓名", "ph_bus": "公司名稱及業務", "ph_q": "一兩句即可", "err": "請填寫姓名及電郵。", "sending": "傳送中…", "thanks": "謝謝您的查詢，我們會盡快與您聯絡。", "exp": "過往經驗", "exp_h2": "真正經營過企業的團隊，親手為您打造 AI。", "bio": "Charlotte Chen Pienaar 為 Capera Advisory 創辦人兼首席顧問。她畢業於紐約大學（New York University），主修經濟學，其後於 KPMG 及 Macquarie Capital 從事金融工作，並曾參與 500 Startups accelerator，累積逾 15 年金融、科技及企業營運經驗。她曾出任創辦人、Fractional CEO 及 Fractional COO，深明企業在發展過程中所面對的挑戰。", "range": "服務客戶涵蓋款待業、休閒康樂、製造業及消費品品牌。", "l_str": "策略", "l_os": "AI Operating System", "l_dash": "Dashboard", "l_wf": "Workflow 及 AI", "l_ho": "交接", "l_lead": "領導", "c1_tag": "多店款待業集團 · Fractional COO", "c1_prob": "營運數據散落各個系統，難以掌握全局。", "c1_out": "兩間分店共用一套 Command Center，由每日簡報到每月 P&amp;L，一目了然。", "c1_d1": "深入訪談管理層及核心團隊，完成 due diligence 報告，篩選出最具價值、最值得優先推行的項目。", "c1_d2": "建立橫跨兩間分店的 Command Center，按職位設定權限，並設有財務及合規專區；人力資源功能即將推出。", "c1_d3": "由各崗位的每日簡報到 P&amp;L 及營運分析，建立整套管理報告，讓管理層看清趨勢、提前部署。", "c1_d4": "將人手處理的日常工作 AI 化，並為會計及合規事務訂立 SOP。", "c1_d5": "管理團隊已能自行運作 Command Center，Capera 繼續提供技術支援。", "c2_tag": "場地業務重整 · Fractional CEO", "c2_prob": "場地瀕臨結業，只有數星期時間力挽狂瀾。", "c2_out": "12 星期內全面恢復營運，並交由內部團隊接手管理。", "c2_d1": "主導危機處理，制定全面營運重整策略，訂立 OKR，並於場地重建期間統籌各供應商。品牌方面，重新梳理品牌方向及定位，由構思一直跟進至正式推出。", "c2_d2": "從零開始建立場地的營運系統，將銷售、市場推廣以至法務及財務等部門的流程、知識及決策集中管理，讓新員工可透過系統迅速上手。", "c2_d3": "先以項目 Dashboard 掌握重建進度，其後建立董事會報告及商業智能分析，並將決議以至會議記錄等董事會事務納入同一系統管理。", "c2_d4": "為日常營運制定 SOP，並將流程 AI 化，讓場地毋須時刻有人監督，亦能順暢運作。", "c2_d5": "聘請總經理並加以指導，協助他組建內部團隊，獨立管理整個平台。", "c3_tag": "B2B 及 B2C 製造商 · Fractional COO", "c3_prob": "兩個業務單位各自發展，方向不一。", "c3_out": "雙線業務方向一致，由前線銷售到董事會，共用同一套營運系統。", "c3_d1": "與創辦人一同訂立 B2B 及 B2C 業務的發展方向，再轉化為管理層可跟進的 OKR 及指標。", "c3_d2": "為各部門度身建立合適的系統，包括銷售團隊專用的 CRM，以及全公司共用的知識庫。", "c3_d3": "每日為 CEO 提供兩項業務的營運概覽；董事會報告亦整合為一套流程，由整理數據到製作簡報一站式完成。", "c3_d4": "市場推廣物料設計、報價及發票流程均已 AI 化，下一步將延伸至產品設計，讓團隊毋須增聘人手，亦能應付業務增長。", "c3_d5": "培訓團隊掌握新工具及流程，直至能夠獨立運作。", "c4_tag": "消費品品牌 · 創辦人兼 CEO", "c4_prob": "在美國沒有本地團隊，從亞洲遙距建立美國品牌。", "c4_out": "由品牌創立到進駐美國全國零售渠道，全靠一支精簡的遙距團隊。", "c4_d1": "訂立品牌定位、產品路線圖及渠道策略，先後拓展 DTC 及批發業務，在沒有創投資金的情況下，成功取得美國全國性零售客戶。", "c4_d2": "品牌成立之初已建立整套營運系統，以一個 Command Center 連接前線及後勤，讓遙距團隊掌握同一套資訊。", "c4_d3": "建立 Dashboard，由產品開發、供應鏈到市場推廣及財務表現全面追蹤，讓團隊隨時掌握業務進展。", "c4_d4": "設計團隊與外部夥伴之間的協作流程，由廠商、供應商到零售客戶，讓業務增長之餘，團隊依然保持精簡。", "c4_d5": "帶領跨時區的遙距團隊，方向一致、分工清晰。", "q_h": "「化繁為簡，速度驚人。」", "q_b": "「Charlotte 結合 C-suite 的策略思維與前線營運經驗，在極短時間內理順複雜的業務，並帶來實際成果。」", "q_a": "董事會成員（匿名）"}, EN = {"err": "Please fill in your name and email.", "sending": "Sending…", "thanks": "Thank you. We'll be in touch shortly."};
   var lang = 'en';
   window.capT = function(k){ return (lang === 'zh-Hant' ? ZH : EN)[k]; };
   var els = document.querySelectorAll('[data-i18n]'), phs = document.querySelectorAll('[data-i18n-ph]');
