@@ -510,6 +510,7 @@ section {
 }
 .waitlist-submit:hover { background: #8C7B5E; border-color: #8C7B5E; }
 
+.waitlist-note a { color: #1C1A16; text-decoration: underline; text-underline-offset: 3px; }
 .waitlist-note {
   margin-top: 20px;
   font-family: 'Space Grotesk', sans-serif;
@@ -573,7 +574,7 @@ footer {
   <div class="nav-wm">CAPERA ADVISORY</div>
   <div class="nav-links">
     <div class="nav-location">Hong Kong | Southeast Asia</div>
-    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+    <a href="#waitlist" class="nav-cta">Start a Conversation</a>
   </div>
 </nav>
 
@@ -588,7 +589,7 @@ footer {
     <p class="hero-body">Capera Advisory builds the intelligence layer that runs your business, so growing doesn't mean losing sight of what matters.</p>
 
     <div class="hero-actions">
-      <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+      <a href="#waitlist" class="btn-primary">Start a Conversation</a>
       <div class="hero-contact">
         <div class="contact-label">Enquiries</div>
         <a href="mailto:charlotte@capera-advisory.com" class="contact-email">charlotte@capera-advisory.com</a>
@@ -725,8 +726,8 @@ footer {
 <section class="waitlist" id="waitlist">
   <div class="section-inner">
     <div class="eyebrow">Limited Availability</div>
-    <h2 class="waitlist-h2">Join the Waitlist</h2>
-    <p class="waitlist-body">Capera Advisory takes on a limited number of engagements at a time. Leave your details and we'll be in touch when a spot opens up.</p>
+    <h2 class="waitlist-h2">Start a conversation</h2>
+    <p class="waitlist-body">Engagements begin with a fixed-fee strategy and opportunity mapping phase, so you know the scope and the cost before anything is built. You don't need to know where AI fits yet. Working that out is what the first conversation is for. We take on a limited number of engagements at a time.</p>
 
     <form class="waitlist-form" id="waitlist-form">
       <div>
@@ -741,9 +742,13 @@ footer {
         <label class="field-label" for="wl-business">Business</label>
         <input class="field-input" id="wl-business" name="business" type="text" placeholder="Business name & what you do">
       </div>
-      <button class="waitlist-submit" type="submit" id="waitlist-submit-btn">Join Waitlist</button>
+      <div>
+        <label class="field-label" for="wl-question">What would you most like to fix or see more clearly?</label>
+        <input class="field-input" id="wl-question" name="question" type="text" placeholder="In a sentence or two">
+      </div>
+      <button class="waitlist-submit" type="submit" id="waitlist-submit-btn">Start a Conversation</button>
     </form>
-    <div class="waitlist-note" id="waitlist-status">We'll be in touch when a spot opens up.</div>
+    <div class="waitlist-note" id="waitlist-status">Prefer email? <a href="mailto:charlotte@capera-advisory.com">charlotte@capera-advisory.com</a></div>
 
     <script>
       (function () {
@@ -757,6 +762,7 @@ footer {
           var name = document.getElementById('wl-name').value.trim();
           var email = document.getElementById('wl-email').value.trim();
           var business = document.getElementById('wl-business').value.trim();
+          var question = document.getElementById('wl-question').value.trim();
 
           if (!name || !email) {
             status.textContent = "Please fill in your name and email.";
@@ -764,9 +770,9 @@ footer {
           }
 
           btn.disabled = true;
-          btn.textContent = "Joining…";
+          btn.textContent = "Sending…";
 
-          var body = new URLSearchParams({ name: name, email: email, business: business });
+          var body = new URLSearchParams({ name: name, email: email, business: business, question: question });
 
           fetch(ENDPOINT, {
             method: 'POST',
@@ -776,7 +782,7 @@ footer {
 
           setTimeout(function () {
             form.hidden = true;
-            status.textContent = "You're on the list. We'll be in touch when a spot opens up.";
+            status.textContent = "Thank you. We'll be in touch shortly.";
           }, 900);
         });
       })();
